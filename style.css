@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "inter", sans-serif;
+    color: #343a40;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.sudoku_table, .numberSelect_table {
+    box-sizing: content-box;
+
+    width: 450px;
+
+    border: 2px solid #343a40;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 2rem;
+}
+
+.sudoku_table {
+    height: 450px;
+
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
+}
+
+.numberSelect_table {
+    height: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+
+    margin-top: 1rem;
+}
+
+.sudoku_tile, .numberSelect_tile{
+    height: 50px;
+    width: 50px;
+
+    border: 1px solid #343a40;
+
+    font-size: 20px;
+    font-weight: 500;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numberSelect_tile {
+    border-top: 0px solid #343a40;
+    border-bottom: 0px solid #343a40;
+
+    cursor: pointer;
+}
+
+.numberSelect_tile:first-child {
+    border-left: 0px solid #343a40;
+}
+
+.numberSelect_tile:last-child {
+    border-right: 0px solid #343a40;
+}
+
+.numberSelect_tile:hover {
+    background-color: rgb(52, 58, 64, 0.1);
+}
+
+.sudoku_tile:nth-child(9n+1) {
+    border-left: 0px solid #343a40; 
+}
+
+.sudoku_tile:nth-child(9n) {
+    border-right: 0px solid #343a40; 
+}
+
+.dashboard {
+    position: relative;
+}
+
+.tools {
+    position: absolute;
+    transform: translatex(-50%);
+    bottom: 0;
+    left: -3rem;
+
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+
+    width: 50px;
+    height: 150px;
+
+    overflow: hidden;
+
+    border: 2px solid #343a40;
+    border-radius: 10px;
+}
+
+.pencil, .eraser, .selector, .eye, .reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #343a40;
+    border-left: 0 solid;
+    border-right: 0 solid;
+
+    cursor: pointer;
+}
+
+.pencil, .eye {
+    border-top: 0px;
+}
+
+.selector, .reset {
+    border-bottom: 0px;
+}
+
+.pencil:hover,
+.eraser:hover,
+.selector:hover,
+.eye:hover,
+.reset:hover {
+    background-color: rgb(52, 58, 64, 0.1);
+}
+
+.options {
+    position: absolute;
+    transform: translatex(50%);
+    bottom: 0;
+    right: -3rem;
+
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+
+    width: 50px;
+    height: 100px;
+
+    overflow: hidden;
+
+    border: 2px solid #343a40;
+    border-radius: 10px;
+}
